@@ -1,0 +1,410 @@
+
+/* =========================================
+   OUTLAST TRIALS [RU] — RESPONSIVE STYLES
+   ========================================= */
+
+@media (max-width: 1050px) {
+  .site-header {
+    padding: 0 4%;
+    gap: 18px;
+  }
+
+  .main-nav {
+    gap: 17px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .nav-join {
+    padding: 11px;
+    font-size: 9px;
+  }
+
+  .hero-content,
+  .section {
+    width: 90%;
+  }
+
+  .feature-card {
+    padding: 22px;
+  }
+
+  .site-footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 75px;
+  }
+
+  .site-header {
+    min-height: 72px;
+    padding: 0 5%;
+  }
+
+  .brand-mark {
+    width: 39px;
+    height: 39px;
+    font-size: 17px;
+  }
+
+  .brand-text strong {
+    font-size: 11px;
+    letter-spacing: 1.3px;
+  }
+
+  .brand-text small {
+    font-size: 8px;
+    letter-spacing: 1.8px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #111;
+    border: 1px solid #393030;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 19px;
+    height: 2px;
+    background: #eee;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 71px;
+    left: 0;
+    right: 0;
+    padding: 20px 5% 25px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #0a0a0a;
+    border-bottom: 1px solid #402024;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 12px;
+  }
+
+  .nav-link.active::after {
+    display: none;
+  }
+
+  .nav-join {
+    display: block;
+    margin-top: 17px;
+    padding: 14px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: 610px;
+  }
+
+  .hero-content {
+    width: 90%;
+    padding: 75px 0 45px;
+  }
+
+  .status-line {
+    font-size: 8px;
+    letter-spacing: 1.1px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(49px, 12vw, 80px);
+    letter-spacing: -3px;
+  }
+
+  .hero h1 > span {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .hero h1 em {
+    font-size: 23px;
+    letter-spacing: 6px;
+  }
+
+  .hero-description {
+    max-width: 480px;
+    font-size: 13px;
+  }
+
+  .hero-footnote {
+    gap: 12px 20px;
+    margin-top: 40px;
+    font-size: 8px;
+  }
+
+  .hero-side-label {
+    right: 9px;
+    font-size: 7px;
+  }
+
+  .warning-track {
+    justify-content: flex-start;
+    gap: 22px;
+    min-height: 39px;
+    padding: 8px 15px;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .section {
+    width: 90%;
+    padding: 75px 0;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .section-heading h2,
+  .banner-content h2 {
+    font-size: clamp(30px, 8vw, 43px);
+  }
+
+  .section-index {
+    font-size: 9px;
+  }
+
+  .section-description {
+    font-size: 12px;
+    margin-bottom: 27px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .feature-card {
+    min-height: 220px;
+    padding: 23px;
+  }
+
+  .feature-card p {
+    max-width: 420px;
+  }
+
+  .community-banner {
+    min-height: auto;
+    padding: 65px 5%;
+  }
+
+  .banner-stamp {
+    width: 105px;
+    height: 105px;
+  }
+
+  .banner-stamp span {
+    font-size: 36px;
+  }
+
+  .banner-stamp small {
+    font-size: 6px;
+    margin-top: 5px;
+  }
+
+  .support-form {
+    padding: 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-submit-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-submit-row .button {
+    width: 100%;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    padding: 32px 5%;
+  }
+
+  .site-footer > p {
+    max-width: 100%;
+  }
+
+  .copyright {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand {
+    gap: 9px;
+  }
+
+  .brand-text strong {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .brand-text small {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero {
+    min-height: 590px;
+  }
+
+  .hero h1 {
+    font-size: 47px;
+  }
+
+  .hero h1 em {
+    font-size: 20px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-footnote {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .banner-stamp {
+    display: none;
+  }
+
+  .support-form {
+    padding: 16px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 16px;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+}
+/* NEWS AND ADMIN — MOBILE FIXES */
+
+@media (max-width: 760px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .news-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .news-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .news-filter {
+    max-width: 100%;
+  }
+
+  .news-card {
+    min-width: 0;
+  }
+
+  .news-card-content {
+    padding: 20px;
+  }
+
+  .admin-container {
+    width: 92%;
+    padding: 25px 0;
+  }
+
+  .admin-dashboard,
+  .admin-panel {
+    min-width: 0;
+  }
+
+  .admin-post-item {
+    overflow-wrap: anywhere;
+  }
+
+  .admin-form-actions {
+    flex-direction: column;
+  }
+
+  .admin-form-actions button,
+  .admin-panel button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .news-card-content {
+    padding: 16px;
+  }
+
+  .news-category {
+    font-size: 9px;
+  }
+
+  .news-card-code {
+    font-size: 9px;
+  }
+}

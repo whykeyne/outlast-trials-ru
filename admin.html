@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Панель администратора | Outlast Trials [RU]</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: #090909;
+      color: #eee;
+    }
+
+    .admin-page {
+      width: min(100% - 32px, 1000px);
+      margin: 0 auto;
+      padding: 48px 0 80px;
+    }
+
+    .admin-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .admin-brand {
+      color: #f04444;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .admin-panel {
+      background: #111;
+      border: 1px solid #303030;
+      padding: clamp(20px, 5vw, 36px);
+      margin-bottom: 24px;
+    }
+
+    .admin-panel h1,
+    .admin-panel h2 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .admin-muted {
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    .admin-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .admin-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .admin-field label {
+      font-size: 13px;
+      color: #ccc;
+      font-weight: 700;
+    }
+
+    .admin-field input,
+    .admin-field textarea,
+    .admin-field select {
+      width: 100%;
+      box-sizing: border-box;
+      background: #080808;
+      color: #eee;
+      border: 1px solid #383838;
+      padding: 13px 14px;
+      font: inherit;
+      border-radius: 0;
+    }
+
+    .admin-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .admin-field input:focus,
+    .admin-field textarea:focus,
+    .admin-field select:focus {
+      outline: 1px solid #d83a3a;
+      border-color: #d83a3a;
+    }
+
+    .admin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .admin-btn {
+      border: 1px solid #d83a3a;
+      background: #d12c2c;
+      color: white;
+      padding: 12px 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .admin-btn:hover {
+      background: #ed4141;
+    }
+
+    .admin-btn.secondary {
+      background: transparent;
+      border-color: #444;
+    }
+
+    .admin-btn.secondary:hover {
+      background: #222;
+    }
+
+    .admin-btn.danger {
+      background: #240c0c;
+      border-color: #702222;
+    }
+
+    .admin-status {
+      min-height: 24px;
+      color: #f07878;
+      overflow-wrap: anywhere;
+    }
+
+    .admin-status.success {
+      color: #83d99a;
+    }
+
+    .admin-post {
+      border: 1px solid #333;
+      padding: 18px;
+      margin-top: 12px;
+      background: #0b0b0b;
+    }
+
+    .admin-post h3 {
+      margin: 0 0 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .admin-post p {
+      color: #aaa;
+      overflow-wrap: anywhere;
+    }
+
+    .admin-tag {
+      color: #ff7777;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .admin-hidden {
+      display: none !important;
+    }
+
+    .admin-back {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .admin-back:hover {
+      color: #ff6666;
+    }
+
+    @media (max-width: 600px) {
+      .admin-page {
+        width: min(100% - 20px, 1000px);
+        padding-top: 24px;
+      }
+
+      .admin-actions .admin-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="admin-page">
+    <header class="admin-top">
+      <div class="admin-brand">OUTLAST TRIALS [RU]</div>
+      <a class="admin-back" href="index.html">← Вернуться на сайт</a>
+    </header>
+
+    <section class="admin-panel" id="loginPanel">
+      <p class="admin-tag">Restricted access</p>
+      <h1>Вход администратора</h1>
+      <p class="admin-muted">
+        Войди, чтобы управлять новостями и событиями сообщества.
+      </p>
+
+      <form class="admin-form" id="adminLoginForm">
+        <div class="admin-field">
+          <label for="adminPassword">Пароль администратора</label>
+          <input
+            id="adminPassword"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            maxlength="500"
+            required
+          >
+        </div>
+
+        <div class="admin-actions">
+          <button class="admin-btn" type="submit" id="loginButton">
+            Войти в панель
+          </button>
+        </div>
+
+        <p class="admin-status" id="adminLoginStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="admin-hidden" id="adminDashboard">
+      <div class="admin-panel">
+        <div class="admin-top">
+          <div>
+            <p class="admin-tag">Content management</p>
+            <h1>Управление публикациями</h1>
+          </div>
+          <button class="admin-btn secondary" type="button" id="logoutButton">
+            Выйти
+          </button>
+        </div>
+
+        <p class="admin-muted">
+          Создавай новости, публикуй события и отмечай важные объявления.
+        </p>
+
+        <form class="admin-form" id="postForm">
+          <input type="hidden" id="postId">
+
+          <div class="admin-field">
+            <label for="postTitle">Заголовок</label>
+            <input id="postTitle" maxlength="180" required>
+          </div>
+
+          <div class="admin-field">
+            <label for="postCategory">Категория</label>
+            <select id="postCategory" required>
+              <option value="news">Новости</option>
+              <option value="events">События</option>
+              <option value="important">Важное</option>
+            </select>
+          </div>
+
+          <div class="admin-field">
+            <label for="postSummary">Краткое описание</label>
+            <textarea id="postSummary" maxlength="500" required></textarea>
+          </div>
+
+          <div class="admin-field">
+            <label for="postContent">Полный текст</label>
+            <textarea id="postContent" maxlength="30000" required></textarea>
+          </div>
+
+          <div class="admin-field">
+            <label for="postImage">Ссылка на изображение (необязательно)</label>
+            <input id="postImage" type="url" maxlength="2000" placeholder="https://example.com/image.jpg">
+          </div>
+
+          <div class="admin-actions">
+            <button class="admin-btn" type="submit" id="savePostButton">
+              Опубликовать
+            </button>
+            <button class="admin-btn secondary" type="button" id="cancelEditButton">
+              Очистить форму
+            </button>
+            <button class="admin-btn secondary" type="button" id="refreshPostsButton">
+              Обновить список
+            </button>
+          </div>
+
+          <p class="admin-status" id="postFormStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="admin-panel">
+        <h2>Опубликованные материалы</h2>
+        <p class="admin-muted" id="postsCounter">Загрузка списка...</p>
+        <div id="adminPostsList" aria-live="polite"></div>
+        <p class="admin-status" id="postsStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <footer class="admin-muted">
+      Outlast Trials [RU] · Административная панель
+    </footer>
+  </main>
+
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
